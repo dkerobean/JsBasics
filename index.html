@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h4 id="header">Message</h4>
+<input type="text" id="input">
+<hr>
+
+<button onclick="red()">Red</button>
+<button onclick="green()">Green</button>
+
+<h3 id="user">Change me </h3>
+<input type="text" id="input1"> <button onclick="clicked()">click</button>
+<hr>    
+
+<h3>What is your age</h3>
+<p id="age"></p>
+<input type="text" id="ageinput">
+<button onclick="checkAge()">Check</button>
+<script>
+        // consoles and documents 
+        console.log("Hell0 world");
+        document.write("<h1>Hello</h1>");
+        console.warn("this is a warning");
+        console.error("this is an error");
+
+        document.getElementById("header").innerHTML = "Changed Text";
+        document.getElementById("input").value = "javascript";
+
+        // variables and datatypes 
+        let x = 8
+        x = 1
+
+        let str = "hello"
+        let name = "dicks"
+        let isValid = true 
+        let number = 12
+
+        // opetions 
+        let a = 1
+        let u = 11
+        let z = u + a 
+
+        a += 1 
+        u++ 
+
+        // concatination
+        z = str + name
+        let str2 = "hi"
+        str+="hello"
+        console.log(str2)
+
+        console.log(z);
+
+        //fUNCTIONS
+
+        function add(a,b){
+
+            return a + b
+        }
+
+        let addtion = add(6,7)
+        console.log(addtion)
+        console.log(add(-6,5))
+
+        function sub(a,b){
+            console.log(a-b)
+        }
+
+        sub(3,9)
+
+        function red(){
+            document.getElementById("header").innerHTML="You clicked red"
+            document.getElementById("header").style.color="red"
+        }
+
+        function green(){
+            document.getElementById("header").innerHTML="You clicked green"
+            document.getElementById("header").style.color="green"
+        }
+        
+        // if else 
+
+        function clicked(){
+
+            let inp = document.getElementById("input1").value
+            if(inp == "red"){
+                document.getElementById("user").style.color = "red"
+            }
+          else if(inp=="blue"){
+                document.getElementById("user").style.color = "blue"
+            }
+            else{
+                document.getElementById("user").style.color = "black"
+            }
+
+            switch(inp){
+                case "yellow":
+                    document.getElementById("user").style.color = "yellow"
+                    break
+                case "violet":
+                    document.getElementById("user").style.color = "violet"
+                    break
+                default:
+                    document.getElementById("user").style.color = "black"
+                    break
+
+        }
+            
+        }
+
+        
+        function checkAge(){
+            let age = document.getElementById("ageinput").value
+        
+            if(age >= 18){
+                document.getElementById("age").innerHTML = "You are an adult"
+            }
+            else if (age < 18){
+                document.getElementById("age").innerHTML = "You are a child"
+            }else{
+                document.getElementById("age").innerHTML = "We couldnt validate your age"
+
+            }
+        }
+
+
+        // arrays
+        
+        let arr = [1, "lee", 'chun', 98]
+        console.log(arr[2])
+        arr[2] = "chun"
+        console.log(arr.length)
+        //removes last element
+        arr.pop
+        // adds to the top of the array
+        arr.push("queck")
+        // removes first element
+        arr.shift
+        arr.sort
+
+        // while loops 
+        let i = 1 
+        
+        while(i<10){
+            console.log(i)
+            i+=1
+            if(i==6){
+                break
+            }
+        }
+
+        newarr = ['kin', 'kim', 'loki', 'dan']
+
+        let e = 0 
+
+        while(e < newarr.length){
+            console.log(newarr[e])
+            e++
+        }
+
+        arr1 = []
+
+        c = 0 
+        while(c<101){
+            arr1.push(c)
+            c+=1
+        }
+
+        console.log(arr1)
+
+
+    for(let i=0; i<10; i++){
+        console.log(i)
+    }  
+
+
+    function checkArray(arr,value){
+        for (let i=0; i<arr.value; i++)
+            if(arr[i]==value){
+                return true
+            }
+
+            return false
+    }
+    let arr3 = [2,23,54,34,23]
+    console.log(checkArray(arr3,8))
+
+    for(let element of arr3){
+        console.log(element)
+    }
+
+    // sets 
+    // unordered uniques set of elements 
+
+    let _set = new Set()
+    _set.add(3).add(8).add(3).add(67)
+    console.log(_set.has(4))
+    console.log(_set.delete(4))
+
+    for(let ele of _set.values()){
+        console.log(ele)
+    }
+
+    let _set1 = new Set([2,4,6,7,5,5575,75,75,765,])
+    let _set2 = new Set("wfwefew")
+
+    function test(x){
+        if(x=="4"){
+        console.log("Found")
+        }else{
+            console.log("No")
+        }
+    }
+
+    var set3 = new Set("hello")
+    set3.forEach(test)
+    
+
+    // MAPS 
+
+    let mp = new Map(
+        [
+            ["T",0],
+            ["B",90]     
+            
+        ]
+    )
+
+    mp.set("lo",34)
+    mp.delete("lo",34)
+    console.log(mp.get("v"))
+    console.log(mp.has("v"))
+    console.log(mp.entries())
+
+    for(let entry of mp){
+        console.log(entry)
+        console.log(entry[0])
+        console.log(entry[1])
+    }
+
+    let mp1 = new Map
+    str = "this is my new string"
+
+    for(let letter of str){
+        if(mp1.has(letter)){
+            mp.set(letter, mp.get(letter)+1)
+        }else{
+            mp.set(letter,1)
+        }
+    }
+
+    console.log(mp1)
+    console.log(mp.get("e"))
+
+    set11 = new Map(
+        [
+            ["loki",4]
+        ]
+    )
+
+    console.log("new map")
+    console.log(set11.get(4))
+
+
+
+
+
+
+
+
+       
+
+        
+       
+
+        
+
+
+
+
+
+
+        
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
