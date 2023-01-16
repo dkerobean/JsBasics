@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="class">
+        <p>Query Selector for class</p>
+    </div>
+
+    <div id="id_query">
+        <p>Query Selector for id_query</p>
+    </div>
+
+    <div id="id">
+        <p>Query Selector for id</p>
+    </div>
+
+    <div id="id2">
+        <p>Query Selector for id</p>
+    </div>
+
+    <script>
+        document.querySelector('.class').textContent = "Query Selector for class works";
+        document.querySelector('#id_query').textContent = "Query Selector for id_query works";
+        document.getElementById('id').textContent = "id works";
+
+        let id_content = document.getElementById('id2'); 
+        id_content.textContent = "ID2 Works";
+
+
+    </script>
+</body>
+</html>
